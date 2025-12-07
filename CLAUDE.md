@@ -1,154 +1,170 @@
 # Metodología de Trabajo - 4C PERÚ
 
-## Contexto del Proyecto
+## Rol en el Ecosistema
 
-**4C PERÚ** es el frontend específico para Perú del sistema de cálculo de huella de carbono para la industria cementera y de concreto.
+**4C PERÚ** es el **frontend para Perú** del sistema de huella de carbono. Las empresas y coordinadores de Perú acceden por aquí.
 
-**Origen**: Nuevo proyecto creado como parte de la arquitectura de dos aplicaciones separadas (decisión 2025-12-06).
+### Arquitectura del Sistema
 
-**Relación con otros proyectos**:
-- **latam-3c**: Repo centralizado con documentación técnica y coordinación
-- **4c-ficem-core**: Backend que expone APIs REST consumidas por 4c-peru
-
-**Documentación centralizada**: Toda la documentación técnica vive en el repo `latam-3c`:
-- Plan de arquitectura: `docs/1-tecnica/00-plan-etapa-1-dos-apps.md`
-- Especificación técnica: `docs/1-tecnica/01-arquitectura-ficem-4c.md`
-- Decisión de separación: `docs/3-sesiones/sesion_2025-12-06.md`
-- Documentación técnica completa: `latam-3c/docs/1-tecnica/`
-
-**Acceso a documentación**:
 ```
-https://github.com/cpinilla1974/latam-3c/tree/main/docs
+┌─────────────────────────────────────────────────────────────┐
+│                    ECOSISTEMA 4C LATAM                      │
+├─────────────────────────────────────────────────────────────┤
+│                                                             │
+│  latam-3c (Documentación)                                   │
+│  └── Arquitectura, decisiones, flujos, funcionalidades      │
+│      https://github.com/cpinilla1974/latam-3c               │
+│                                                             │
+│  4c-ficem-core (Backend Centralizado)                       │
+│  └── APIs REST, cálculos, validación, PostgreSQL            │
+│  └── JWT auth emitido aquí                                  │
+│                                                             │
+│  4c-peru (ESTE REPO) ◄── Frontend País                      │
+│  └── Next.js, consume APIs de ficem-core                    │
+│  └── Empresas cargan Excel, coordinadores revisan           │
+│                                                             │
+│  knowledge-api (IA/Analítica)                               │
+│  └── RAG, predicciones, insights (desarrollo paralelo)      │
+│                                                             │
+└─────────────────────────────────────────────────────────────┘
 ```
 
 ---
 
-## Responsabilidades de 4C PERÚ
+## Documentación Centralizada
 
-- Dashboard consolidado de Perú (métricas, gráficos)
-- Listado y detalle de empresas peruanas
-- Interfaz para generación de plantillas Excel (consumiendo API de ficem-core)
-- Visualización de resultados de cálculos
-- Benchmarking específico de Perú
-- Reportes y exportación de datos
-- Integración con microservicios de knowledge-api
+**IMPORTANTE**: La documentación técnica vive en `latam-3c`:
 
----
+| Documento | Contenido |
+|-----------|-----------|
+| `docs/1-tecnica/02-funcionalidades-por-usuario.md` | Funcionalidades por grupo, arquitectura, auth |
+| `docs/1-tecnica/03-flujo-datos.md` | Flujo completo: empresa → país → FICEM |
+| `docs/3-sesiones/` | Registro de decisiones por fecha |
 
-## Tecnología
-
-**Stack TBD (a definir)**:
-- Frontend: React / Next.js / Vue / Svelte (pendiente decisión)
-- Cliente API: fetch / axios / requests
-- Comunicación: REST (inicialmente), GraphQL (futuro)
-- Dependencias: según framework elegido
+**URL**: https://github.com/cpinilla1974/latam-3c/tree/main/docs
 
 ---
 
-## Principios de Documentación
+## Usuarios de 4C PERÚ
 
-1. **Solo lo esencial**: Documentar únicamente lo discutido y acordado
-2. **Bloques de construcción**: Cada documento debe ser necesario y suficiente para construir
-3. **Sin opciones**: Las opciones son para discusión en pantalla, no para documentar
-4. **Conciso**: Evitar documentos extensos, ir al punto
+### Empresas Cementeras
+- Login con credenciales de su empresa
+- Descargar plantillas Excel
+- Cargar Excel con datos
+- Ver estado del envío (borrador, enviado, validado, rechazado)
+- Corregir y reenviar si fue rechazado
+- Ver resultados y benchmarking
+- Descargar reportes
 
-### Qué NO documentar
-- Listas de opciones
-- Planes tentativos sin discutir
-- Recomendaciones no solicitadas
-- Información redundante o especulativa
-
-### Qué SÍ documentar
-- Decisiones técnicas tomadas (en sesiones/)
-- Estructuras de datos
-- Especificaciones funcionales
-- Cambios de arquitectura
-- Integraciones con otros servicios
+### Coordinadores País (ASOCEM, PRODUCE)
+- Revisar envíos de empresas
+- Aprobar o rechazar con comentarios
+- Ver dashboard métricas país
+- Generar reportes país
+- Benchmarking nacional
 
 ---
 
-## Política de Comunicación
+## Flujo de Datos
 
-- NUNCA usar jerga argentina o regionalismos (ej: "tenés", "vos", etc.)
-- SIEMPRE usar español neutro profesional
-- Usar tuteo neutro ("tienes", "tú") según contexto
-
----
-
-## Política de Commits
-
-- NUNCA incluir a Claude como autor del commit
-- NO usar las líneas "🤖 Generated with Claude Code" ni "Co-Authored-By: Claude"
-- Los commits deben aparecer como del usuario únicamente
-
----
-
-## Gestión de Sesiones de Trabajo
-
-### Al iniciar una sesión:
-1. Revisar documentación en `latam-3c/docs/` para contexto
-2. Si hay decisiones nuevas, documentarlas en `latam-3c/docs/3-sesiones/sesion_YYYY-MM-DD.md`
-3. Mantener este repo enfocado en código y cambios técnicos
-
-### Al finalizar una sesión:
-1. Si hubo cambios significativos, crear/actualizar sesión en latam-3c
-2. Hacer commit con descripción clara
-3. Guardar cambios antes de terminar
+```
+Empresa (4c-peru)              ficem-core              Coordinador (4c-peru)
+       │                            │                         │
+       │ 1. Login ─────────────────>│                         │
+       │<─────────────── JWT ───────│                         │
+       │                            │                         │
+       │ 2. Descarga template ─────>│                         │
+       │<─────────────── Excel ─────│                         │
+       │                            │                         │
+       │ 3. Sube Excel ────────────>│                         │
+       │<─────────── validación ────│                         │
+       │                            │                         │
+       │ 4. Confirma envío ────────>│ estado: enviado         │
+       │                            │────────────────────────>│
+       │                            │                         │
+       │                            │ 5. Revisa y aprueba ◄───│
+       │                            │                         │
+       │ 6. Ve resultados ─────────>│                         │
+       │<─────────── datos ─────────│                         │
+```
 
 ---
 
-## Estructura de Carpetas (TBD según framework)
+## Stack Tecnológico
 
-Ejemplo para Next.js:
+- **Framework**: Next.js
+- **Auth**: JWT (recibido de ficem-core, guardado en cookie httpOnly)
+- **API Client**: fetch/axios
+- **Styling**: TBD (Tailwind, styled-components, etc.)
+
+---
+
+## APIs Consumidas (de ficem-core)
+
+| Endpoint | Método | Uso |
+|----------|--------|-----|
+| `/auth/login` | POST | Autenticación |
+| `/templates/{tipo}` | GET | Descargar plantilla |
+| `/uploads` | POST | Cargar Excel |
+| `/uploads/{id}/validate` | GET | Validar datos |
+| `/uploads/{id}/submit` | POST | Confirmar envío |
+| `/uploads/{id}/review` | POST | Aprobar/rechazar (coordinador) |
+| `/results/{empresa_id}` | GET | Resultados |
+| `/benchmarking/PE` | GET | Benchmarking Perú |
+
+**Config**:
+```
+FICEM_CORE_URL=http://localhost:8000  # Dev
+FICEM_CORE_URL=https://api.ficem.com  # Prod
+```
+
+---
+
+## Estructura de Carpetas
+
 ```
 4c-peru/
-├── pages/                      # Páginas de la aplicación
-│   ├── index.tsx              # Dashboard Perú
-│   ├── empresas/              # Listado empresas
-│   ├── generador/             # Generador Excel
-│   ├── resultados/            # Vista resultados
-│   ├── benchmarking/          # Benchmarking
-│   └── reportes/              # Reportes
-├── components/                 # Componentes reutilizables
+├── app/                        # App Router (Next.js 13+)
+│   ├── page.tsx               # Landing/Login
+│   ├── dashboard/             # Dashboard empresa/coordinador
+│   ├── upload/                # Carga Excel
+│   ├── submissions/           # Estado envíos
+│   ├── results/               # Resultados
+│   └── benchmarking/          # Benchmarking
+├── components/                 # Componentes UI
+├── lib/                        # Utilidades
+│   └── api.ts                 # Cliente API ficem-core
 ├── hooks/                      # Custom hooks
-├── utils/                      # Utilidades
-│   └── api_client.ts          # Cliente REST para ficem-core
-├── config/                     # Configuración
-│   └── api_config.ts          # URLs APIs
-├── styles/                     # Estilos
 └── package.json
 ```
 
 ---
 
-## Comunicación con FICEM CORE
+## Iniciar la Aplicación
 
-Este proyecto consume APIs REST de ficem-core:
-
-**Endpoints esperados** (según `latam-3c/docs/1-tecnica/01-arquitectura-ficem-4c.md`):
-- `GET /api/v1/excel-generator/generate` - Genera plantillas Excel
-- `GET /api/v1/empresas` - Listado de empresas
-- `GET /api/v1/resultados/{id}` - Resultados de cálculos
-- `POST /api/v1/classifier/classify` - Clasificación GCCA
-
-**Configuración**:
-```
-FICEM_CORE_URL=http://localhost:8000  # Desarrollo
-FICEM_CORE_URL=https://api.ficem.com  # Producción (futuro)
+```bash
+npm install
+npm run dev
+# Acceso: http://localhost:3000
 ```
 
 ---
 
-## Próximos Pasos Iniciales
+## Políticas
 
-1. Definir stack tecnológico (framework)
-2. Crear estructura base del proyecto
-3. Implementar cliente REST para APIs de ficem-core
-4. Crear primeras páginas (dashboard, listado empresas)
-5. Integración con knowledge-api
-6. Sincronizar estructura con plan en latam-3c
+### Comunicación
+- Español neutro (NO regionalismos)
+- Respuestas directas
+
+### Commits
+- NO incluir "Co-Authored-By: Claude"
+- NO usar "Generated with Claude Code"
+- Commits limpios del usuario
+
+### Sesiones
+- Documentar decisiones en `latam-3c/docs/3-sesiones/`
+- Este repo es solo código
 
 ---
 
-**Última actualización**: 2025-12-06
-**Versión**: 1.0
+**Última actualización**: 2025-12-07
