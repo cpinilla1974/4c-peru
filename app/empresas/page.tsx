@@ -37,66 +37,79 @@ export default function EmpresasPage() {
   return (
     <div className="space-y-6">
       <div>
-        <h2 className="text-3xl font-bold text-gray-900">Empresas</h2>
-        <p className="text-gray-600 mt-2">Gestiona y visualiza información de empresas registradas</p>
+        <h1 className="text-4xl font-bold text-primary">Empresas</h1>
+        <p className="text-lg text-base-content/70 mt-2">Gestiona y visualiza información de empresas registradas</p>
       </div>
 
       {/* Búsqueda */}
-      <div className="bg-white rounded-lg shadow p-6">
-        <input
-          type="text"
-          placeholder="Buscar por nombre o industria..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-        />
+      <div className="card bg-base-100 shadow-lg">
+        <div className="card-body">
+          <input
+            type="text"
+            placeholder="Buscar por nombre o industria..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="input input-bordered input-primary w-full"
+          />
+        </div>
       </div>
 
       {/* Listado */}
-      <div className="bg-white rounded-lg shadow overflow-hidden">
+      <div>
         {loading && (
-          <div className="px-6 py-12 text-center">
-            <p className="text-gray-600">Cargando...</p>
+          <div className="flex justify-center items-center py-12">
+            <span className="loading loading-spinner loading-lg text-primary"></span>
           </div>
         )}
 
         {error && (
-          <div className="px-6 py-4 bg-red-50 border-l-4 border-red-400">
-            <p className="text-red-700">{error}</p>
+          <div className="alert alert-error">
+            <svg xmlns="http://www.w3.org/2000/svg" className="stroke-current shrink-0 h-6 w-6" fill="none" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 14l-2-2m0 0l-2-2m2 2l2-2m-2 2l-2 2" />
+            </svg>
+            <span>{error}</span>
           </div>
         )}
 
         {!loading && !error && filteredEmpresas.length === 0 && (
-          <div className="px-6 py-12 text-center">
-            <p className="text-gray-600">
-              {searchTerm ? 'No hay empresas que coincidan con tu búsqueda' : 'No hay empresas registradas'}
-            </p>
+          <div className="card bg-base-100 shadow-lg">
+            <div className="card-body text-center">
+              <p className="text-base-content/70">
+                {searchTerm ? 'No hay empresas que coincidan con tu búsqueda' : 'No hay empresas registradas'}
+              </p>
+            </div>
           </div>
         )}
 
         {!loading && !error && filteredEmpresas.length > 0 && (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredEmpresas.map((empresa) => (
               <Link key={empresa.id} href={`/empresas/${empresa.id}`}>
-                <div className="bg-white border border-gray-200 rounded-lg p-6 hover:shadow-lg transition-shadow cursor-pointer">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-2">{empresa.nombre}</h3>
-                  <div className="space-y-2 text-sm text-gray-600">
-                    <p>
-                      <span className="font-medium">Industria:</span> {empresa.industria}
-                    </p>
-                    <p>
-                      <span className="font-medium">Ubicación:</span> {empresa.ubicacion}
-                    </p>
-                    {empresa.empleados && (
-                      <p>
-                        <span className="font-medium">Empleados:</span> {empresa.empleados}
-                      </p>
-                    )}
-                  </div>
-                  <div className="mt-4 pt-4 border-t border-gray-200">
-                    <button className="text-blue-600 hover:text-blue-800 font-medium text-sm">
-                      Ver detalles →
-                    </button>
+                <div className="card bg-base-100 shadow-lg hover:shadow-xl transition-shadow cursor-pointer border border-base-200">
+                  <div className="card-body">
+                    <h3 className="card-title text-primary">{empresa.nombre}</h3>
+                    <div className="divider my-2"></div>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex justify-between">
+                        <span className="font-semibold text-base-content/70">Industria:</span>
+                        <span className="badge badge-secondary">{empresa.industria}</span>
+                      </div>
+                      <div className="flex justify-between">
+                        <span className="font-semibold text-base-content/70">Ubicación:</span>
+                        <span>{empresa.ubicacion}</span>
+                      </div>
+                      {empresa.empleados && (
+                        <div className="flex justify-between">
+                          <span className="font-semibold text-base-content/70">Empleados:</span>
+                          <span>{empresa.empleados}</span>
+                        </div>
+                      )}
+                    </div>
+                    <div className="card-actions justify-end mt-4">
+                      <button className="btn btn-primary btn-sm">
+                        Ver detalles →
+                      </button>
+                    </div>
                   </div>
                 </div>
               </Link>

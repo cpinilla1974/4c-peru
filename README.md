@@ -139,14 +139,11 @@ Se utiliza Tailwind CSS. Los estilos se aplican directamente en los componentes:
 </div>
 ```
 
-## Documentación Centralizada
+## Documentación
 
-La documentación técnica completa vive en [latam-3c](https://github.com/cpinilla1974/latam-3c/tree/main/docs):
-
-- Plan de arquitectura
-- Especificación técnica
-- Decisiones de diseño
-- Guías de integración
+- [Mapa de Páginas](docs/tecnica/PAGINAS.md) - Rutas, funcionalidades, flujos
+- [CLAUDE.md](./CLAUDE.md) - Políticas de desarrollo y comunicación
+- [docs/sesiones/](docs/sesiones/) - Registro de decisiones y sesiones
 
 ## Contribuciones
 

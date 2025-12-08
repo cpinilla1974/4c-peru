@@ -39,7 +39,6 @@
 |-----------|-----------|
 | `docs/1-tecnica/02-funcionalidades-por-usuario.md` | Funcionalidades por grupo, arquitectura, auth |
 | `docs/1-tecnica/03-flujo-datos.md` | Flujo completo: empresa → país → FICEM |
-| `docs/3-sesiones/` | Registro de decisiones por fecha |
 
 **URL**: https://github.com/cpinilla1974/latam-3c/tree/main/docs
 
@@ -95,7 +94,7 @@ Empresa (4c-peru)              ficem-core              Coordinador (4c-peru)
 - **Framework**: Next.js
 - **Auth**: JWT (recibido de ficem-core, guardado en cookie httpOnly)
 - **API Client**: fetch/axios
-- **Styling**: TBD (Tailwind, styled-components, etc.)
+- **Styling**: TailwindCSS + DaisyUI
 
 ---
 
@@ -135,6 +134,8 @@ FICEM_CORE_URL=https://api.ficem.com  # Prod
 ├── lib/                        # Utilidades
 │   └── api.ts                 # Cliente API ficem-core
 ├── hooks/                      # Custom hooks
+├── docs/
+│   └── sesiones/              # Registro de sesiones de trabajo
 └── package.json
 ```
 
@@ -150,21 +151,58 @@ npm run dev
 
 ---
 
-## Políticas
+## Principios de Documentación
 
-### Comunicación
-- Español neutro (NO regionalismos)
-- Respuestas directas
+1. **Solo lo esencial**: Documentar únicamente lo discutido y acordado
+2. **Bloques de construcción**: Cada documento debe ser necesario y suficiente para construir el software
+3. **Sin opciones**: Las opciones son para discusión en pantalla, no para documentar
+4. **Conciso y efectivo**: Evitar documentos extensos, ir al punto
 
-### Commits
-- NO incluir "Co-Authored-By: Claude"
-- NO usar "Generated with Claude Code"
-- Commits limpios del usuario
+## Qué NO documentar
+- Listas de opciones
+- Planes tentativos sin discutir
+- Recomendaciones no solicitadas
+- Información redundante o especulativa
 
-### Sesiones
-- Documentar decisiones en `latam-3c/docs/3-sesiones/`
-- Este repo es solo código
+## Qué SÍ documentar
+- Estructuras de datos acordadas
+- Decisiones técnicas tomadas
+- Especificaciones funcionales definidas
+- Código y configuraciones necesarias
 
 ---
 
-**Última actualización**: 2025-12-07
+## Política de Comunicación
+
+- NUNCA usar jerga argentina o regionalismos (ej: "tenés", "vos", etc.)
+- SIEMPRE usar español neutro profesional
+- Usar "usted" o tuteo neutro ("tienes", "tú") según el contexto
+
+## Política de Commits
+
+- NUNCA incluir a Claude como autor del commit
+- NO usar las líneas "🤖 Generated with Claude Code" ni "Co-Authored-By: Claude"
+- Los commits deben aparecer como del usuario únicamente
+
+---
+
+## Gestión de Sesiones de Trabajo
+
+### Al iniciar una sesión:
+1. Revisar archivos en `/docs/sesiones/` para entender el contexto y progreso anterior
+2. Crear archivo de nueva sesión con formato: `sesion_YYYY-MM-DD.md`
+3. Incluir datos básicos:
+   - Fecha
+   - Objetivo de la sesión
+   - Estado inicial del proyecto
+
+### Al finalizar una sesión:
+1. Actualizar el archivo de sesión con:
+   - Trabajo realizado
+   - Decisiones tomadas
+   - Próximos pasos identificados
+2. Guardar cambios antes de terminar
+
+---
+
+**Última actualización**: 2025-12-08

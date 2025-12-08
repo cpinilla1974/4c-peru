@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hoja de Ruta - Con Imágenes</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
+    </style>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#3D5537",
+              "background-light": "#FFFFFF",
+              "background-dark": "#1c1220",
+              "accent-light": "#B4E6A7",
+              "text-primary": "#000000",
+              "text-secondary": "#3D5537",
+              "border-light": "#D9D9D9"
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+</head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-border-light px-4 lg:px-10 py-3">
+<div class="flex items-center gap-4 text-text-primary">
+<div class="size-6 text-primary">
+<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"></path></svg>
+</div>
+<h2 class="text-text-primary text-lg font-bold leading-tight tracking-[-0.015em]">Hoja de Ruta</h2>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Acceder al Sistema</span>
+</button>
+</header>
+<main class="flex flex-col gap-10 md:gap-16 pt-8 md:pt-12">
+<div class="@container">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-xl items-start justify-end px-4 pb-10 @[480px]:px-10" data-alt="Abstract gradient background with light green and white tones, symbolizing sustainability and clean energy." style="background-image: linear-gradient(to top, rgba(180, 230, 167, 0.6) 0%, rgba(255, 255, 255, 0) 70%), linear-gradient(to right, #ffffff, #f0f0f0);">
+<div class="flex flex-col gap-2 text-left">
+<h1 class="text-text-primary text-4xl font-bold leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-bold @[480px]:leading-tight @[480px]:tracking-[-0.033em]">
+                                            Hoja de Ruta hacia la Carbono Neutralidad 2050
+                                        </h1>
+<h2 class="text-text-secondary text-base font-normal leading-normal @[480px]:text-lg @[480px]:font-normal @[480px]:leading-normal">
+                                            El compromiso de la industria del cemento y concreto de Perú para un futuro sostenible.
+                                        </h2>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 px-4 md:p-0">
+<div class="flex min-w-[158px] flex-1 flex-col gap-4 rounded-lg p-6 border border-border-light shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-2">
+<p class="text-text-primary text-base font-medium leading-normal">Empresas Comprometidas</p>
+<p class="text-primary tracking-light text-4xl font-bold leading-tight">3</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-primary opacity-80">apartment</span>
+</div>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-4 rounded-lg p-6 border border-border-light shadow-sm">
+<div class="flex items-start justify-between">
+<div class="flex flex-col gap-2">
+<p class="text-text-primary text-base font-medium leading-normal">Producción Anual</p>
+<p class="text-primary tracking-light text-4xl font-bold leading-tight">10+ Mt/año</p>
+</div>
+<span class="material-symbols-outlined text-4xl text-primary opacity-80">precision_manufacturing</span>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Nuestra Trayectoria hacia Cero Emisiones</h2>
+<div class="grid grid-cols-[auto_1fr] md:grid-cols-[40px_1fr] gap-x-2 px-4">
+<div class="flex flex-col items-center gap-1 pt-3">
+<div class="text-primary bg-accent-light/50 rounded-full p-1.5 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1, 'wght' 500;">flag</span>
+</div>
+<div class="w-[2px] bg-border-light h-2 grow"></div>
+</div>
+<div class="flex flex-1 flex-col py-3 pl-2">
+<p class="text-text-primary text-lg font-medium leading-normal">Línea Base</p>
+<p class="text-text-secondary text-base font-normal leading-normal">2024 (580 kg CO₂/t)</p>
+</div>
+<div class="flex flex-col items-center gap-1">
+<div class="w-[2px] bg-border-light h-2"></div>
+<div class="text-primary bg-accent-light/50 rounded-full p-1.5 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1, 'wght' 500;">trending_down</span>
+</div>
+<div class="w-[2px] bg-border-light h-2 grow"></div>
+</div>
+<div class="flex flex-1 flex-col py-3 pl-2">
+<p class="text-text-primary text-lg font-medium leading-normal">Meta Intermedia</p>
+<p class="text-text-secondary text-base font-normal leading-normal">2030 (520 kg CO₂/t)</p>
+</div>
+<div class="flex flex-col items-center gap-1 pb-3">
+<div class="w-[2px] bg-border-light h-2"></div>
+<div class="text-primary bg-accent-light/50 rounded-full p-1.5 flex items-center justify-center">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1, 'wght' 500;">verified</span>
+</div>
+</div>
+<div class="flex flex-1 flex-col py-3 pl-2">
+<p class="text-text-primary text-lg font-medium leading-normal">Carbono Neutralidad</p>
+<p class="text-text-secondary text-base font-normal leading-normal">2050 (0 kg CO₂/t)</p>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-5 pt-5">Ejes Estratégicos de Reducción</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 px-4 md:px-0">
+<div class="flex flex-col gap-4 rounded-lg p-6 border border-border-light shadow-sm">
+<div class="flex items-center gap-3">
+<div class="bg-accent-light/50 rounded-full p-2 text-primary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 400;">foundation</span></div>
+<h3 class="text-text-primary font-bold text-lg">Clinker y Cemento</h3>
+</div>
+<p class="text-text-secondary text-base">Reducción del factor clinker y uso de cementos adicionados.</p>
+<div class="text-right text-primary text-2xl font-bold">45%</div>
+</div>
+<div class="flex flex-col gap-4 rounded-lg p-6 border border-border-light shadow-sm">
+<div class="flex items-center gap-3">
+<div class="bg-accent-light/50 rounded-full p-2 text-primary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 400;">local_fire_department</span></div>
+<h3 class="text-text-primary font-bold text-lg">Combustibles</h3>
+</div>
+<p class="text-text-secondary text-base">Uso de combustibles alternativos y biomasa.</p>
+<div class="text-right text-primary text-2xl font-bold">28%</div>
+</div>
+<div class="flex flex-col gap-4 rounded-lg p-6 border border-border-light shadow-sm">
+<div class="flex items-center gap-3">
+<div class="bg-accent-light/50 rounded-full p-2 text-primary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 400;">bolt</span></div>
+<h3 class="text-text-primary font-bold text-lg">Eficiencia Energética</h3>
+</div>
+<p class="text-text-secondary text-base">Optimización de procesos y modernización de equipos.</p>
+<div class="text-right text-primary text-2xl font-bold">12%</div>
+</div>
+<div class="flex flex-col gap-4 rounded-lg p-6 border border-border-light shadow-sm">
+<div class="flex items-center gap-3">
+<div class="bg-accent-light/50 rounded-full p-2 text-primary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 400;">wind_power</span></div>
+<h3 class="text-text-primary font-bold text-lg">Energía Eléctrica</h3>
+</div>
+<p class="text-text-secondary text-base">Transición hacia fuentes de energía renovable.</p>
+<div class="text-right text-primary text-2xl font-bold">10%</div>
+</div>
+<div class="flex flex-col gap-4 rounded-lg p-6 border border-border-light shadow-sm">
+<div class="flex items-center gap-3">
+<div class="bg-accent-light/50 rounded-full p-2 text-primary"><span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1, 'wght' 400;">bubble_chart</span></div>
+<h3 class="text-text-primary font-bold text-lg">Nuevas Tecnologías</h3>
+</div>
+<p class="text-text-secondary text-base">Captura, uso y almacenamiento de carbono (CCUS).</p>
+<div class="text-right text-primary text-2xl font-bold">5%</div>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-text-primary text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-5 pt-5">Documentos Clave</h2>
+<div class="flex flex-col gap-3 px-4 md:px-0">
+<a class="flex items-center gap-4 p-4 border border-border-light rounded-lg hover:bg-accent-light/30 transition-colors" href="#">
+<span class="material-symbols-outlined text-text-secondary">description</span>
+<span class="text-text-primary font-medium flex-grow">PDF Hoja de Ruta</span>
+<span class="material-symbols-outlined text-text-secondary">download</span>
+</a>
+<a class="flex items-center gap-4 p-4 border border-border-light rounded-lg hover:bg-accent-light/30 transition-colors" href="#">
+<span class="material-symbols-outlined text-text-secondary">description</span>
+<span class="text-text-primary font-medium flex-grow">PDF Metodología</span>
+<span class="material-symbols-outlined text-text-secondary">download</span>
+</a>
+<a class="flex items-center gap-4 p-4 border border-border-light rounded-lg hover:bg-accent-light/30 transition-colors" href="#">
+<span class="material-symbols-outlined text-text-secondary">description</span>
+<span class="text-text-primary font-medium flex-grow">PDF TDR</span>
+<span class="material-symbols-outlined text-text-secondary">download</span>
+</a>
+</div>
+</div>
+<div class="bg-accent-light/40 rounded-xl p-8 md:p-12 text-center flex flex-col items-center gap-6 mt-8">
+<h2 class="text-text-primary text-3xl font-bold leading-tight">Únase a la iniciativa</h2>
+<p class="text-text-secondary max-w-lg">Sea parte del cambio. Registre su empresa y comience a reportar su huella de carbono para contribuir a un futuro más sostenible para el Perú.</p>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Acceder al Sistema</span>
+</button>
+</div>
+</main>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#34D399",
+            "background-light": "#F0F0F0",
+            "background-dark": "#1F2937",
+            "card-light": "#FFFFFF",
+            "card-dark": "#111827",
+            "text-light": "#1F2937",
+            "text-dark": "#F3F4F6",
+            "placeholder-light": "#6B7280",
+            "placeholder-dark": "#9CA3AF",
+            "border-light": "#D1D5DB",
+            "border-dark": "#4B5563"
+          },
+          fontFamily: {
+            "display": ["Space Grotesk", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center p-4">
+<div class="layout-container flex h-full w-full max-w-md flex-col items-center justify-center">
+<div class="w-full bg-card-light dark:bg-card-dark rounded-xl shadow-lg p-8">
+<div class="flex w-full flex-col items-center">
+<div class="mb-6 h-12 w-32 bg-contain bg-center bg-no-repeat" data-alt="4C Perú Logo" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDj25KRL48YP8gKW5uEklCvL53ZE9dnjbNOWgzRyJZ7QLQx5FZNdD-hmc8ifsny4ApxK56_uAkenQyPmhFsvg1sHdW67lKeajS-Pjyj20139n9fsGFuiDOBFvuvE_MhuSApsaJfxan9jrL8l-ku4525r--iwKHS8nB7tMzIhcwUuLG47BtLjavcCWL6Jlr_TOUVtcZXOwMetKQFlzMFWcjg_WpQyYXfYE04hnpfsUrFpcleDo7BXDcdxT80pGmGCqi6kB-9_D7RbQ");'></div>
+<h1 class="text-2xl font-bold leading-tight text-center pb-4 text-text-light dark:text-text-dark">Iniciar Sesión en el Sistema</h1>
+<div class="flex w-full flex-col items-stretch gap-4 py-3">
+<label class="flex flex-col flex-1">
+<p class="text-base font-medium leading-normal pb-2 text-text-light dark:text-text-dark">Correo Electrónico</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg border border-border-light bg-card-light dark:border-border-dark dark:bg-card-dark text-text-light dark:text-text-dark placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark focus:border-primary focus:ring-0 h-12 p-3 text-base font-normal leading-normal" placeholder="ejemplo@empresa.com" value=""/>
+</div>
+</label>
+</div>
+<div class="flex w-full flex-col items-stretch gap-4 py-3">
+<label class="flex flex-col flex-1">
+<p class="text-base font-medium leading-normal pb-2 text-text-light dark:text-text-dark">Contraseña</p>
+<div class="flex w-full flex-1 items-stretch rounded-lg">
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-l-lg border border-r-0 border-border-light bg-card-light dark:border-border-dark dark:bg-card-dark text-text-light dark:text-text-dark placeholder:text-placeholder-light dark:placeholder:text-placeholder-dark focus:border-primary focus:ring-0 h-12 p-3 text-base font-normal leading-normal" placeholder="••••••••••••" type="password" value=""/>
+<div class="flex items-center justify-center rounded-r-lg border border-l-0 border-border-light bg-card-light dark:border-border-dark dark:bg-card-dark px-3 text-placeholder-light dark:text-placeholder-dark">
+<span class="material-symbols-outlined cursor-pointer text-2xl">visibility_off</span>
+</div>
+</div>
+</label>
+</div>
+<div class="flex w-full px-0 py-4 justify-center">
+<button class="flex min-w-[84px] w-full cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-5 bg-primary text-white text-base font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Ingresar</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex w-full px-4 py-6 justify-center">
+<a class="text-sm font-medium text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors" href="#">Volver a inicio</a>
+</div>
+</div>
+</div>
+</body></html>

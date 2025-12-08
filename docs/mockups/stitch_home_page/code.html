@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Home Page</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#6c1d86",
+              "background-light": "#f7f6f8",
+              "background-dark": "#1c1220",
+            },
+            fontFamily: {
+              "display": ["Space Grotesk", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="font-display bg-background-light dark:bg-background-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 sm:px-10 md:px-20 lg:px-40 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[960px] flex-1">
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-black/10 dark:border-b-white/10 px-4 sm:px-6 lg:px-10 py-3">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="size-6 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-[-0.015em] text-slate-900 dark:text-slate-100">Logo</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<div class="flex items-center gap-9">
+<a class="text-sm font-medium leading-normal text-slate-800 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">Roadmap</a>
+<a class="text-sm font-medium leading-normal text-slate-800 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">Goals</a>
+<a class="text-sm font-medium leading-normal text-slate-800 dark:text-slate-300 hover:text-primary dark:hover:text-primary" href="#">About Us</a>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Acceder al Sistema</span>
+</button>
+</div>
+<button class="md:hidden flex items-center justify-center p-2 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-800 dark:text-slate-200">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="flex flex-col gap-10 md:gap-16 mt-5">
+<div class="@container">
+<div class="@[480px]:p-4">
+<div class="flex min-h-[480px] flex-col gap-6 bg-cover bg-center bg-no-repeat @[480px]:gap-8 @[480px]:rounded-lg items-center justify-center p-4" data-alt="A modern cement plant with a focus on sustainability, showing green hills in the background" style='background-image: linear-gradient(rgba(28, 18, 32, 0.4) 0%, rgba(28, 18, 32, 0.7) 100%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuBXhc9PgWG7td5yK0tUsFERduFYsqtvV0yJIFJ_2cKb1mL8VJS19Zj0N1TIWduj-V4ssXD0Zqql1pTDxmxnFVGaC6wNhZ62lOziqAwUOphBprZ6sFsMsGz-5QF7TskbXTenqafnerD-UgOlAFboxsO57dAE1wiWUmzkQD7uZOBS_C7liQmUITQqQX7yXDO7CmysfQNBO21OXB5dRyUWCK_AjOxFkFyzPkwL6vhPfvKJbTzo3TU4t2y6y3QXBmaUuGUHx88p5NOVSQ");'>
+<div class="flex flex-col gap-2 text-center">
+<h1 class="text-white text-4xl font-black leading-tight tracking-[-0.033em] @[480px]:text-5xl @[480px]:font-black @[480px]:leading-tight @[480px]:tracking-[-0.033em]">Rumbo al 2050: Carbono Neutral</h1>
+<h2 class="text-slate-200 text-sm font-normal leading-normal @[480px]:text-base @[480px]:font-normal @[480px]:leading-normal max-w-xl">Uniting the Peruvian cement and concrete industry towards a sustainable, carbon-neutral future.</h2>
+</div>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 @[480px]:h-12 @[480px]:px-5 bg-primary text-white text-sm font-bold leading-normal tracking-[0.015em] @[480px]:text-base @[480px]:font-bold @[480px]:leading-normal @[480px]:tracking-[0.015em] hover:bg-primary/90 transition-colors">
+<span class="truncate">Learn More</span>
+</button>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 p-4">
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-black/10 dark:border-white/10 bg-background-light dark:bg-background-dark">
+<p class="text-sm font-medium leading-normal text-slate-600 dark:text-slate-400 uppercase">meta 2030</p>
+<p class="tracking-light text-2xl font-bold leading-tight text-slate-900 dark:text-slate-100">520 kgCO2/t</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-black/10 dark:border-white/10 bg-background-light dark:bg-background-dark">
+<p class="text-sm font-medium leading-normal text-slate-600 dark:text-slate-400 uppercase">factor clínker</p>
+<p class="tracking-light text-2xl font-bold leading-tight text-slate-900 dark:text-slate-100">0.70</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-black/10 dark:border-white/10 bg-background-light dark:bg-background-dark">
+<p class="text-sm font-medium leading-normal text-slate-600 dark:text-slate-400 uppercase">TSR</p>
+<p class="tracking-light text-2xl font-bold leading-tight text-slate-900 dark:text-slate-100">12%</p>
+</div>
+<div class="flex min-w-[158px] flex-1 flex-col gap-2 rounded-lg p-6 border border-black/10 dark:border-white/10 bg-background-light dark:bg-background-dark">
+<p class="text-sm font-medium leading-normal text-slate-600 dark:text-slate-400 uppercase">reducción</p>
+<p class="tracking-light text-2xl font-bold leading-tight text-slate-900 dark:text-slate-100">-32%</p>
+</div>
+</div>
+<div class="p-4 @container">
+<div class="flex flex-col items-stretch justify-start rounded-lg @xl:flex-row @xl:items-start shadow-md bg-white dark:bg-black/20 overflow-hidden">
+<div class="w-full @xl:w-1/2 bg-center bg-no-repeat aspect-video @xl:aspect-auto @xl:h-auto bg-cover" data-alt="Modern concrete building with green surroundings" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBe7SVavYPJB8U_ed1sydezQ-LCDcnt1jnm5yuq4jPHszXWyoX32kYV5Bf7GK049iDtm9cbVfM1WY-EdFgq2n3-Zc1FuKWVNUvq4Jq8ggnr8lNBhGANiQv3xJ6Uksu0u6H-JbP2beLk4SQD3HiTA9MN7-oAXP55UGUObl3-HIqwhclAJO59BeBo1rWeF9MyyV7e-JSkGIaLMgsfeA08CyEm57y5oxrEiH-KB956thqp__IFiyin0qo1ahOcRdONUDvlxR3tjZFnzQ");'></div>
+<div class="flex w-full @xl:w-1/2 min-w-72 grow flex-col items-start justify-center gap-4 py-6 px-6 @xl:py-8 @xl:px-8">
+<div class="flex items-center gap-3">
+<div class="bg-primary/10 dark:bg-primary/20 p-2 rounded-full text-primary">
+<span class="material-symbols-outlined">flag</span>
+</div>
+<p class="text-2xl font-bold leading-tight tracking-[-0.015em] text-slate-900 dark:text-slate-100">Nuestro Desafío 2050</p>
+</div>
+<p class="text-base font-normal leading-normal text-slate-600 dark:text-slate-400">Our overarching goal is to achieve complete carbon neutrality by 2050, transforming our industry through innovation and collective action.</p>
+<button class="flex mt-2 min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-4 bg-primary text-white text-sm font-medium leading-normal hover:bg-primary/90 transition-colors">
+<span class="truncate">Explore the Challenge</span>
+</button>
+</div>
+</div>
+</div>
+<div class="px-4 py-5">
+<h2 class="text-slate-900 dark:text-slate-100 text-[22px] font-bold leading-tight tracking-[-0.015em] pb-5">Ejes Estratégicos</h2>
+<div class="flex flex-col gap-2">
+<details class="group rounded-lg bg-white dark:bg-black/20 p-4" open="">
+<summary class="flex cursor-pointer list-none items-center justify-between font-medium">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">layers</span>
+<span class="text-lg font-bold text-primary">35%</span>
+<span class="text-slate-800 dark:text-slate-200">Clinker, cemento y aditivos</span>
+</div>
+<div class="text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</div>
+</summary>
+<p class="mt-4 text-slate-600 dark:text-slate-400">Optimizing clinker factor, utilizing supplementary cementitious materials, and innovating with novel additives to lower the carbon footprint of our final products.</p>
+</details>
+<details class="group rounded-lg bg-white dark:bg-black/20 p-4">
+<summary class="flex cursor-pointer list-none items-center justify-between font-medium">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">local_fire_department</span>
+<span class="text-lg font-bold text-primary">40%</span>
+<span class="text-slate-800 dark:text-slate-200">Eficiencia energética y combustibles</span>
+</div>
+<div class="text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</div>
+</summary>
+<p class="mt-4 text-slate-600 dark:text-slate-400">Implementing state-of-the-art technologies to reduce energy consumption and increasing the use of alternative fuels with lower carbon intensity.</p>
+</details>
+<details class="group rounded-lg bg-white dark:bg-black/20 p-4">
+<summary class="flex cursor-pointer list-none items-center justify-between font-medium">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">bolt</span>
+<span class="text-lg font-bold text-primary">11%</span>
+<span class="text-slate-800 dark:text-slate-200">Electricidad</span>
+</div>
+<div class="text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</div>
+</summary>
+<p class="mt-4 text-slate-600 dark:text-slate-400">Transitioning to renewable electricity sources for our operations, including wind, solar, and hydro power, to decarbonize our energy mix.</p>
+</details>
+<details class="group rounded-lg bg-white dark:bg-black/20 p-4">
+<summary class="flex cursor-pointer list-none items-center justify-between font-medium">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">recycling</span>
+<span class="text-lg font-bold text-primary">9%</span>
+<span class="text-slate-800 dark:text-slate-200">Carbonatación</span>
+</div>
+<div class="text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</div>
+</summary>
+<p class="mt-4 text-slate-600 dark:text-slate-400">Leveraging the natural process of carbonation in concrete structures to re-absorb atmospheric CO2 over their lifecycle, creating a carbon sink.</p>
+</details>
+<details class="group rounded-lg bg-white dark:bg-black/20 p-4">
+<summary class="flex cursor-pointer list-none items-center justify-between font-medium">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-primary">co2</span>
+<span class="text-lg font-bold text-primary">5%</span>
+<span class="text-slate-800 dark:text-slate-200">Captura de Carbono (CCUS)</span>
+</div>
+<div class="text-slate-600 dark:text-slate-400">
+<span class="material-symbols-outlined transition-transform duration-300 group-open:rotate-180">expand_more</span>
+</div>
+</summary>
+<p class="mt-4 text-slate-600 dark:text-slate-400">Investing in and developing Carbon Capture, Utilization, and Storage technologies to capture remaining emissions at the source and prevent their release into the atmosphere.</p>
+</details>
+</div>
+</div>
+<div class="relative overflow-hidden rounded-lg p-8 md:p-12 my-10 bg-gradient-to-br from-primary/80 to-primary dark:from-primary/50 dark:to-primary/80">
+<div class="absolute inset-0 bg-cover bg-center opacity-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB5RvuKa-TcNy9UtoO45rv_0dhvoOjq6rh9NVgg4oTTg5s8U7G8AFld-MHNTkA1sgUuvpZLqJTLEWbLb2PZnm3osiIJC5pDGp3g8OuGgQJQJeKFktWQneW7qU9d_Pd7UIsCf74vNfqA1HRYxzMJwmE5NJam1GEe6MtllSjFT48m2fku0IF5SKT8vhvO5jDhs6TYobbGgX2TuAyf6kDMkTD8x4nDBS-Z9UrqpxY-QnMz3_cfzwvrfhfyH0FSldcSdhOXoPvsHll5eA");'></div>
+<div class="relative flex flex-col items-center justify-center text-center gap-6">
+<h3 class="text-white text-3xl font-bold tracking-tight">Metas Claras para el 2030</h3>
+<blockquote class="max-w-2xl">
+<p class="text-lg font-medium text-white/90">"Nuestra hoja de ruta es un compromiso colectivo para transformar la industria, estableciendo metas ambiciosas pero alcanzables que guiarán nuestras acciones hacia un futuro sostenible y libre de carbono."</p>
+</blockquote>
+<button class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-12 px-6 bg-white text-primary text-base font-bold leading-normal tracking-[0.015em] hover:bg-slate-100 transition-colors shadow-lg">
+<span class="truncate">Acceder al Sistema</span>
+</button>
+</div>
+</div>
+</main>
+<footer class="mt-10 py-8 border-t border-black/10 dark:border-white/10">
+<div class="flex flex-col md:flex-row justify-between items-center gap-6 px-4">
+<div class="flex items-center gap-4 text-slate-900 dark:text-slate-100">
+<div class="size-5 text-primary">
+<svg fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path d="M42.4379 44C42.4379 44 36.0744 33.9038 41.1692 24C46.8624 12.9336 42.2078 4 42.2078 4L7.01134 4C7.01134 4 11.6577 12.932 5.96912 23.9969C0.876273 33.9029 7.27094 44 7.27094 44L42.4379 44Z" fill="currentColor"></path>
+</svg>
+</div>
+<h2 class="text-base font-bold leading-tight tracking-[-0.015em] text-slate-700 dark:text-slate-300">Industria Cemento Perú</h2>
+</div>
+<div class="flex items-center gap-6 text-slate-600 dark:text-slate-400">
+<a class="hover:text-primary dark:hover:text-primary transition-colors" href="#">LinkedIn</a>
+<a class="hover:text-primary dark:hover:text-primary transition-colors" href="#">Twitter</a>
+<a class="hover:text-primary dark:hover:text-primary transition-colors" href="#">Contacto</a>
+</div>
+<p class="text-sm text-slate-500 dark:text-slate-500 text-center md:text-right">© 2024. Todos los derechos reservados.</p>
+</div>
+</footer>
+</div>
+</div>
+</div>
+</div>
+</body></html>

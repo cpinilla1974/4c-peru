@@ -1,5 +1,15 @@
 import type { Metadata } from 'next'
+import { Space_Grotesk } from 'next/font/google'
 import '@/styles/globals.css'
+import { AuthProvider } from '@/lib/auth-context'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
+
+const spaceGrotesk = Space_Grotesk({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-display',
+})
 
 export const metadata: Metadata = {
   title: '4C Perú - Huella de Carbono',
@@ -12,34 +22,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="es">
-      <body className="bg-gray-50">
-        <nav className="bg-white shadow-sm">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-between items-center h-16">
-              <div className="flex items-center">
-                <h1 className="text-2xl font-bold text-gray-900">4C Perú</h1>
-              </div>
-              <div className="flex space-x-8">
-                <a href="/" className="text-gray-700 hover:text-gray-900">
-                  Dashboard
-                </a>
-                <a href="/empresas" className="text-gray-700 hover:text-gray-900">
-                  Empresas
-                </a>
-                <a href="/generador" className="text-gray-700 hover:text-gray-900">
-                  Generador
-                </a>
-                <a href="/reportes" className="text-gray-700 hover:text-gray-900">
-                  Reportes
-                </a>
-              </div>
-            </div>
-          </div>
-        </nav>
-        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          {children}
-        </main>
+    <html lang="es" data-theme="4c-peru" suppressHydrationWarning className={spaceGrotesk.variable}>
+      <body className="min-h-screen flex flex-col font-[family-name:var(--font-display)]">
+        <AuthProvider>
+          <Navbar />
+          <main className="flex-1 container mx-auto px-6 py-10 max-w-7xl">
+            {children}
+          </main>
+          <Footer />
+        </AuthProvider>
       </body>
     </html>
   )

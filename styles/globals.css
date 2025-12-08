@@ -1,21 +1,100 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+@plugin "daisyui";
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+/* ========================================
+   TEMA 4C PERÚ - Estilo Moderno
+   Paleta púrpura/magenta inspirada en Carbon Neutrality
+   - Primary: #6B1D84 (púrpura profundo)
+   - Accent: #ED1F7A (magenta vibrante)
+   - Backgrounds: Escala de grises neutros
+   ======================================== */
+[data-theme="4c-peru"] {
+  --p: 286 64% 32%;           /* Púrpura profundo #6B1D84 */
+  --pf: 286 64% 26%;
+  --pc: 0 0% 100%;
+
+  --s: 330 86% 52%;           /* Magenta vibrante #ED1F7A */
+  --sf: 330 86% 46%;
+  --sc: 0 0% 100%;
+
+  --a: 286 50% 45%;           /* Púrpura medio para acentos */
+  --af: 286 50% 40%;
+  --ac: 0 0% 100%;
+
+  --n: 0 0% 15%;              /* Gris oscuro neutro #262626 */
+  --nf: 0 0% 10%;
+  --nc: 0 0% 100%;
+
+  --b1: 240 5% 96%;           /* Fondo claro #F5F5F7 */
+  --b2: 0 0% 100%;            /* Cards blanco */
+  --b3: 240 4% 91%;           /* Bordes sutiles */
+  --bc: 0 0% 10%;             /* Texto oscuro #1A1A1A */
+
+  --in: 207 90% 54%;
+  --su: 158 64% 42%;
+  --wa: 43 96% 56%;
+  --er: 0 91% 61%;
+
+  --rounded-box: 0.75rem;
+  --rounded-btn: 0.5rem;
+  --rounded-badge: 9999px;
+  --animation-btn: 0.2s;
+  --animation-input: 0.2s;
+  --btn-focus-scale: 0.98;
+  --border-btn: 1px;
+  --tab-border: 1px;
+  --tab-radius: 0.5rem;
 }
 
+/* ========================================
+   TEMA 4C PERÚ DARK - Modo oscuro elegante
+   ======================================== */
+[data-theme="4c-peru-dark"] {
+  --p: 330 86% 52%;           /* Magenta como primario en dark */
+  --pf: 330 86% 46%;
+  --pc: 0 0% 100%;
+
+  --s: 286 64% 45%;           /* Púrpura más claro */
+  --sf: 286 64% 40%;
+  --sc: 0 0% 100%;
+
+  --a: 330 70% 60%;           /* Magenta claro */
+  --af: 330 70% 55%;
+  --ac: 0 0% 10%;
+
+  --n: 0 0% 20%;              /* Gris medio */
+  --nf: 0 0% 15%;
+  --nc: 240 5% 96%;
+
+  --b1: 0 0% 10%;             /* Fondo oscuro #1A1A1A */
+  --b2: 0 0% 17%;             /* Cards #2C2C2E */
+  --b3: 0 0% 25%;             /* Elevaciones */
+  --bc: 240 5% 96%;           /* Texto claro #F5F5F7 */
+
+  --in: 207 90% 60%;
+  --su: 158 64% 50%;
+  --wa: 43 96% 60%;
+  --er: 0 91% 65%;
+
+  --rounded-box: 0.75rem;
+  --rounded-btn: 0.5rem;
+  --rounded-badge: 9999px;
+  --animation-btn: 0.2s;
+  --animation-input: 0.2s;
+  --btn-focus-scale: 0.98;
+  --border-btn: 1px;
+  --tab-border: 1px;
+  --tab-radius: 0.5rem;
+}
+
+/* Transiciones suaves al cambiar tema */
 html {
-  scroll-behavior: smooth;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+/* Mejoras tipográficas */
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dashboard Coordinador</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#3D5537",
+                        "background-light": "#FFFFFF",
+                        "background-dark": "#1c1220",
+                        "accent-light": "#B4E6A7",
+                        "text-primary": "#000000",
+                        "text-secondary": "#3D5537",
+                        "border-light": "#D9D9D9"
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+</head>
+<body class="font-display">
+<div class="relative flex h-auto min-h-screen w-full flex-col bg-background-light dark:bg-background-dark group/design-root overflow-x-hidden">
+<div class="layout-container flex h-full grow flex-col">
+<div class="px-4 md:px-10 lg:px-20 flex flex-1 justify-center py-5">
+<div class="layout-content-container flex flex-col max-w-[1200px] flex-1">
+<header class="flex flex-wrap items-center justify-between gap-4 border-b border-solid border-border-light px-4 py-4 mb-8">
+<div class="flex items-center gap-4 text-text-primary">
+<span class="material-symbols-outlined text-3xl text-primary" style="font-variation-settings: 'FILL' 1, 'wght' 500;">dashboard</span>
+<h1 class="text-text-primary text-2xl font-bold leading-tight tracking-[-0.015em]">Dashboard Coordinador</h1>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center justify-center rounded-full size-10 text-text-secondary hover:bg-gray-100">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<div class="flex items-center gap-2">
+<div class="size-10 rounded-full bg-primary text-white flex items-center justify-center font-bold">
+<span>JD</span>
+</div>
+<div class="flex flex-col">
+<span class="text-sm font-bold text-text-primary">Juan Diaz</span>
+<span class="text-xs text-gray-500">Coordinador</span>
+</div>
+</div>
+</div>
+</header>
+<main class="flex flex-col gap-10 md:gap-8">
+<section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4">
+<div class="flex flex-col gap-4 rounded-xl p-6 border border-border-light shadow-sm">
+<div class="flex items-center justify-between">
+<h3 class="text-text-primary text-base font-medium leading-normal">Total empresas</h3>
+<span class="material-symbols-outlined text-2xl text-primary opacity-80">apartment</span>
+</div>
+<p class="text-primary tracking-tight text-4xl font-bold leading-tight">12</p>
+</div>
+<div class="flex flex-col gap-4 rounded-xl p-6 border border-border-light shadow-sm">
+<div class="flex items-center justify-between">
+<h3 class="text-text-primary text-base font-medium leading-normal">Envíos pendientes</h3>
+<span class="material-symbols-outlined text-2xl text-yellow-600 opacity-80" style="font-variation-settings: 'FILL' 1">pending_actions</span>
+</div>
+<p class="text-yellow-600 tracking-tight text-4xl font-bold leading-tight">4</p>
+</div>
+<div class="flex flex-col gap-4 rounded-xl p-6 border border-border-light shadow-sm">
+<div class="flex items-center justify-between">
+<h3 class="text-text-primary text-base font-medium leading-normal">Envíos validados</h3>
+<span class="material-symbols-outlined text-2xl text-green-600 opacity-80" style="font-variation-settings: 'FILL' 1">task_alt</span>
+</div>
+<p class="text-green-600 tracking-tight text-4xl font-bold leading-tight">8</p>
+</div>
+<div class="flex flex-col justify-between rounded-xl p-6 border border-border-light shadow-sm">
+<div class="flex items-center justify-between">
+<h3 class="text-text-primary text-base font-medium leading-normal">Progreso del ciclo</h3>
+</div>
+<div class="flex items-center gap-4">
+<div class="relative size-16">
+<svg class="size-full" height="36" viewBox="0 0 36 36" width="36" xmlns="http://www.w3.org/2000/svg">
+<circle class="stroke-current text-gray-200" cx="18" cy="18" fill="none" r="16" stroke-width="3"></circle>
+<circle class="stroke-current text-primary" cx="18" cy="18" fill="none" r="16" stroke-dasharray="100.53" stroke-dashoffset="33.51" stroke-width="3" transform="rotate(-90 18 18)"></circle>
+</svg>
+<div class="absolute inset-0 flex items-center justify-center text-sm font-bold text-primary">67%</div>
+</div>
+<div class="flex flex-col">
+<p class="text-text-primary text-sm">Ciclo 2024</p>
+<p class="text-xs text-gray-500">Completado</p>
+</div>
+</div>
+</div>
+</section>
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8 px-4 mt-4">
+<div class="lg:col-span-2 flex flex-col gap-4 rounded-xl p-6 border border-border-light shadow-sm">
+<h3 class="text-text-primary text-lg font-bold">Gráfico Hoja de Ruta: Actual vs Meta 2030</h3>
+<div class="w-full h-80 bg-gray-50 rounded-lg flex items-center justify-center">
+<img alt="Gráfico de barras mostrando el progreso de reducción de CO2 con una línea de meta" class="w-full h-full object-cover rounded-lg" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_OLtSEQDdBcBQZNXGPnSz2DTwYtappjMfvXdOLLOcWKgBxUipDGsS0q-9KS6nkWezt4csNYH3-4-N9vek_0L12IaxM3V4ElikxXQxobGvMNKWEUqiA_RREIImbCcAAxJhviHmIaN9wOhGqHcjwHxnyA9iHdZXTjjbsdisXBXSwBd8nGCha1LhjGooFqrCedpNOn68vlg4S3T9wvqvo5gV501h4xWf6UU8O2O_9-FTEtL8lwP0oa8UItMf4X7ZWrVxLLV4ZC9z_w"/>
+</div>
+</div>
+<div class="flex flex-col gap-4 rounded-xl p-6 border border-border-light shadow-sm">
+<h3 class="text-text-primary text-lg font-bold">Lista rápida de pendientes</h3>
+<div class="flex flex-col gap-3">
+<div class="flex justify-between items-center p-3 border-l-4 border-yellow-500 bg-yellow-50/50 rounded-r-lg">
+<div>
+<p class="font-medium text-text-primary text-sm">Empresa Cemento Sol</p>
+<p class="text-xs text-gray-600">Reporte Anual - Pendiente</p>
+</div>
+<a class="text-primary hover:underline text-sm font-medium" href="#">Revisar</a>
+</div>
+<div class="flex justify-between items-center p-3 border-l-4 border-yellow-500 bg-yellow-50/50 rounded-r-lg">
+<div>
+<p class="font-medium text-text-primary text-sm">Concretos Andinos</p>
+<p class="text-xs text-gray-600">Datos Trimestrales - Pendiente</p>
+</div>
+<a class="text-primary hover:underline text-sm font-medium" href="#">Revisar</a>
+</div>
+<div class="flex justify-between items-center p-3 border-l-4 border-red-500 bg-red-50/50 rounded-r-lg">
+<div>
+<p class="font-medium text-text-primary text-sm">Cementos Lima</p>
+<p class="text-xs text-gray-600">Reporte Vencido - 2 días</p>
+</div>
+<a class="text-primary hover:underline text-sm font-medium" href="#">Revisar</a>
+</div>
+<div class="flex justify-between items-center p-3 border-l-4 border-yellow-500 bg-yellow-50/50 rounded-r-lg">
+<div>
+<p class="font-medium text-text-primary text-sm">Perú Concreto S.A.</p>
+<p class="text-xs text-gray-600">Validación de datos - Pendiente</p>
+</div>
+<a class="text-primary hover:underline text-sm font-medium" href="#">Revisar</a>
+</div>
+<div class="text-center mt-2">
+<a class="text-primary text-sm font-bold hover:underline" href="#">Ver todas las tareas</a>
+</div>
+</div>
+</div>
+</section>
+</main>
+</div>
+</div>
+</div>
+</div>
+
+</body></html>
