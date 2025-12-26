@@ -53,7 +53,7 @@ export const api = {
   // Auth endpoints
   auth: {
     login: (email: string, password: string) =>
-      fetchApi<{ access_token: string; token_type: string }>('/auth/login', {
+      fetchApi<{ access_token: string; token_type: string }>('/api/v1/auth/login', {
         method: 'POST',
         body: JSON.stringify({ email, password }),
       }),
@@ -69,7 +69,7 @@ export const api = {
         empresa_id?: number;
         empresa_nombre?: string;
         activo: boolean;
-      }>('/auth/me', {
+      }>('/api/v1/auth/me', {
         method: 'GET',
         token,
       }),

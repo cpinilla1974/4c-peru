@@ -23,7 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="es" data-theme="4c-peru" suppressHydrationWarning className={spaceGrotesk.variable}>
-      <body className="min-h-screen flex flex-col font-[family-name:var(--font-display)]">
+      <body className="min-h-screen flex flex-col font-[family-name:var(--font-display)]" suppressHydrationWarning>
         <AuthProvider>
           <Navbar />
           <main className="flex-1 container mx-auto px-6 py-10 max-w-7xl">

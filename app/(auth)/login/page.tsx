@@ -16,9 +16,15 @@ export default function LoginPage() {
   // Redirigir si ya está autenticado
   useEffect(() => {
     if (isAuthenticated && user) {
-      const redirectPath = (user.rol === 'coordinador' || user.rol === 'coordinador_pais')
-        ? '/coordinador/dashboard'
-        : '/empresa/dashboard';
+      const ROLES_COORDINADOR = ['COORDINADOR_PAIS'];
+      const ROLES_FICEM = ['ROOT', 'ADMIN_PROCESO', 'EJECUTIVO_FICEM', 'AMIGO_FICEM'];
+
+      let redirectPath = '/empresa/dashboard';
+      if (ROLES_COORDINADOR.includes(user.rol)) {
+        redirectPath = '/coordinador/dashboard';
+      } else if (ROLES_FICEM.includes(user.rol)) {
+        redirectPath = '/admin/dashboard';
+      }
       router.push(redirectPath);
     }
   }, [isAuthenticated, user, router]);
@@ -144,11 +150,40 @@ export default function LoginPage() {
           </form>
         </div>
 
-        {/* Demo info */}
-        <div className="mt-8 text-center text-xs text-base-content/40 space-y-1">
-          <p>Sistema en desarrollo</p>
-          <p>Contacta a tu administrador para credenciales de prueba</p>
-        </div>
+        {/* Demo credentials - Solo en desarrollo */}
+        {process.env.NODE_ENV === 'development' && (
+          <div className="mt-6 p-4 bg-base-200 rounded-lg border border-base-300">
+            <p className="text-xs font-semibold text-base-content/70 mb-3 text-center">
+              🔐 Usuarios de prueba
+            </p>
+            <div className="grid grid-cols-1 gap-2 text-xs">
+              <button
+                type="button"
+                onClick={() => { setEmail('coordinador@asocem.pe'); setPassword('peru123'); }}
+                className="btn btn-ghost btn-xs justify-start gap-2 h-auto py-2"
+              >
+                <span className="badge badge-primary badge-xs">Coordinador</span>
+                <span className="opacity-70">coordinador@asocem.pe</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => { setEmail('empresa@cementoslima.com'); setPassword('lima123'); }}
+                className="btn btn-ghost btn-xs justify-start gap-2 h-auto py-2"
+              >
+                <span className="badge badge-secondary badge-xs">Empresa</span>
+                <span className="opacity-70">empresa@cementoslima.com</span>
+              </button>
+              <button
+                type="button"
+                onClick={() => { setEmail('ficem@ficem.org'); setPassword('ficem123'); }}
+                className="btn btn-ghost btn-xs justify-start gap-2 h-auto py-2"
+              >
+                <span className="badge badge-accent badge-xs">FICEM</span>
+                <span className="opacity-70">ficem@ficem.org</span>
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   )

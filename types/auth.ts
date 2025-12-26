@@ -10,7 +10,21 @@ export interface LoginResponse {
   token_type: string;
 }
 
-export type UserRole = 'operador_ficem' | 'coordinador' | 'coordinador_pais' | 'empresa';
+// Roles actualizados según USUARIOS_Y_PERMISOS.md
+export type UserRole =
+  | 'ROOT'
+  | 'ADMIN_PROCESO'
+  | 'EJECUTIVO_FICEM'
+  | 'AMIGO_FICEM'
+  | 'COORDINADOR_PAIS'
+  | 'SUPERVISOR_EMPRESA'
+  | 'INFORMANTE_EMPRESA'
+  | 'VISOR_EMPRESA'
+  // Legacy (para retrocompatibilidad durante migración)
+  | 'operador_ficem'
+  | 'coordinador'
+  | 'coordinador_pais'
+  | 'empresa';
 
 export interface User {
   id: number;

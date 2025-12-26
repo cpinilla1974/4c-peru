@@ -10,23 +10,41 @@ interface ProtectedRouteProps {
   allowedRoles?: UserRole[];
 }
 
+// Grupos de roles según documentación USUARIOS_Y_PERMISOS.md
+const ROLES_EMPRESA: UserRole[] = ['INFORMANTE_EMPRESA', 'SUPERVISOR_EMPRESA', 'VISOR_EMPRESA'];
+const ROLES_COORDINADOR: UserRole[] = ['COORDINADOR_PAIS'];
+const ROLES_FICEM: UserRole[] = ['ROOT', 'ADMIN_PROCESO', 'EJECUTIVO_FICEM', 'AMIGO_FICEM'];
+
 // Función para verificar si un rol tiene acceso
 function hasAccess(userRole: UserRole, allowedRoles: UserRole[]): boolean {
-  // coordinador_pais tiene acceso a rutas de coordinador
-  if (userRole === 'coordinador_pais' && allowedRoles.includes('coordinador')) {
+  // Verificar acceso directo
+  if (allowedRoles.includes(userRole)) {
     return true;
   }
-  return allowedRoles.includes(userRole);
+
+  // Verificar acceso por grupo
+  if (ROLES_EMPRESA.includes(userRole) && allowedRoles.some(r => ROLES_EMPRESA.includes(r))) {
+    return true;
+  }
+  if (ROLES_COORDINADOR.includes(userRole) && allowedRoles.some(r => ROLES_COORDINADOR.includes(r))) {
+    return true;
+  }
+  if (ROLES_FICEM.includes(userRole) && allowedRoles.some(r => ROLES_FICEM.includes(r))) {
+    return true;
+  }
+
+  return false;
 }
 
 // Función para determinar el dashboard según el rol
 function getDashboardPath(rol: UserRole): string {
-  if (rol === 'coordinador' || rol === 'coordinador_pais') {
+  if (ROLES_COORDINADOR.includes(rol)) {
     return '/coordinador/dashboard';
   }
-  if (rol === 'operador_ficem') {
+  if (ROLES_FICEM.includes(rol)) {
     return '/admin/dashboard';
   }
+  // ROLES_EMPRESA por defecto
   return '/empresa/dashboard';
 }
 
@@ -45,7 +63,8 @@ export default function ProtectedRoute({ children, allowedRoles }: ProtectedRout
         router.push(getDashboardPath(user.rol));
       }
     }
-  }, [isAuthenticated, isLoading, user, allowedRoles, router]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuthenticated, isLoading, user, allowedRoles]);
 
   if (isLoading) {
     return (

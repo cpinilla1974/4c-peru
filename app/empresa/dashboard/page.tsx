@@ -237,7 +237,7 @@ function EmpresaDashboardContent() {
 
 export default function EmpresaDashboard() {
   return (
-    <ProtectedRoute allowedRoles={['empresa']}>
+    <ProtectedRoute allowedRoles={['INFORMANTE_EMPRESA', 'SUPERVISOR_EMPRESA', 'VISOR_EMPRESA']}>
       <EmpresaDashboardContent />
     </ProtectedRoute>
   )
