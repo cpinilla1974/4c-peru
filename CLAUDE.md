@@ -186,22 +186,10 @@ npm run dev
 
 ---
 
-## Gestión de Sesiones de Trabajo
+## Sesiones de Trabajo
 
-### Al iniciar una sesión:
-1. Revisar archivos en `/docs/sesiones/` para entender el contexto y progreso anterior
-2. Crear archivo de nueva sesión con formato: `sesion_YYYY-MM-DD.md`
-3. Incluir datos básicos:
-   - Fecha
-   - Objetivo de la sesión
-   - Estado inicial del proyecto
-
-### Al finalizar una sesión:
-1. Actualizar el archivo de sesión con:
-   - Trabajo realizado
-   - Decisiones tomadas
-   - Próximos pasos identificados
-2. Guardar cambios antes de terminar
+- `/ultima-sesion` - Leer última sesión documentada
+- `/documentar-sesion` - Documentar trabajo de la sesión actual
 
 ---
 
